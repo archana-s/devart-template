@@ -1,0 +1,1 @@
+Building a kaleidoscope with HTML/jQuery/hopefully just CSS and may be a couple of libraries

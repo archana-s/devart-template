@@ -1,0 +1,85 @@
+.ft-32 {
+  font-size: 32px;
+}
+
+.ft-20 {
+  font-size: 20px;
+}
+
+.ft-light {
+  font-family: "Helvetica Neue Light";
+}
+
+.ft-thin {
+  font-weight: 200;
+}
+
+body {
+  background-color: black;
+  color: #fff3be;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+}
+body .contents {
+  width: 800px;
+  height: auto;
+  margin: 25px auto;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+body .full-view {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #262626;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  background-image: url("/images/lotus.jpg");
+  background-repeat: no-repeat;
+}
+body .full-view .mask1 {
+  position: absolute;
+  border-left: 252px solid black;
+  border-right: 252px solid transparent;
+  border-bottom: 252px solid black;
+  border-top: 252px solid transparent;
+}
+body .full-view .mask2 {
+  position: absolute;
+  border-left: 125px solid transparent;
+  border-right: 125px solid black;
+  border-bottom: 125px solid transparent;
+  border-top: 125px solid black;
+}
+body .full-view .mask3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-right: 252px solid black;
+  border-left: 252px solid transparent;
+  border-bottom: 252px solid black;
+  border-top: 252px solid transparent;
+}
+body .content-box {
+  border-radius: 5px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  padding: 25px 40px;
+}
