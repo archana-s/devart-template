@@ -1,0 +1,71 @@
+@import "colors";
+@import "fonts";
+
+body {
+  background-color: black;
+  color: $dimYellow;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+
+  .contents {
+    width: 800px;
+    height: auto;
+    margin: 25px auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .full-view {
+    width: 500px;
+    height: 500px;
+    border: 1px solid $darkGray;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    background-image: url('/images/lotus.jpg');
+    background-repeat: no-repeat;
+
+    .mask1 {
+      position: absolute;
+      border-left: 252px solid black;
+      border-right: 252px solid transparent;
+      border-bottom: 252px solid black;
+      border-top: 252px solid transparent;
+    }
+
+    .mask2 {
+      position: absolute;
+      border-left: 125px solid transparent;
+      border-right: 125px solid black;
+      border-bottom: 125px solid transparent;
+      border-top: 125px solid black;
+    }
+
+    .mask3 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-right: 252px solid black;
+      border-left: 252px solid transparent;
+      border-bottom: 252px solid black;
+      border-top: 252px solid transparent;
+    }
+  }
+
+  .content-box {
+    border-radius: 5px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    padding: 25px 40px;
+  }
+}
