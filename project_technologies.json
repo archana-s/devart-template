@@ -1,16 +1,13 @@
 {
     "technologies": {
         "apis": [
-            "insert apis"
         ],
         "platforms": [
-            "insert platforms"
         ],
         "toolkits": [
-            "insert toolkits"
+            "Grunt Bower HTML CSS3 SASS Node.js jQuery"
         ]
     },
     "themes": [
-        "insert themes"
     ]
 }
