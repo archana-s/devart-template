@@ -5,7 +5,7 @@
         "platforms": [
         ],
         "toolkits": [
-            "Grunt Bower HTML CSS3 SASS Node.js jQuery"
+            "Grunt Bower HTML CSS3 SASS Node.js jQuery Backbone.js Marionette.js"
         ]
     },
     "themes": [
