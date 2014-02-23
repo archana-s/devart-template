@@ -8,7 +8,7 @@ define([
 
     return Backbone.Marionette.Controller.extend({
       showHome: function() {
-        var homeView = new HomeView({el: '.contents'});
+        var homeView = new HomeView({el: '.kaleiscope'});
         homeView.render();
       }
     });

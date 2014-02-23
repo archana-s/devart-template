@@ -25,7 +25,10 @@ require.config({
     mainController: './controller/mainController',
 
     /* Views */
-    homeView: './view/homeView'
+    homeView: './view/homeView',
+
+    /*Vendor */
+    html2canvas: './vendor/html2canvas'
   },
 
   shim: {
