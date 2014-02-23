@@ -12,18 +12,29 @@
       <div class="title ft-32 ft-light">Virtual Kaleidoscope</div>
     </div>
 
-    <div class="contents">
+    <div class="kaleiscope horizontal-center">
       <div class="full-view">
         <div class="mask1"></div>
         <div class="mask2"></div>
         <div class="mask3"></div>
       </div>
-
+      <div class="img-canvas">
+      </div>
     </div>
 
   </div>
 
+  <div class="work-area">
+    <div class="canvas-elem"></div>
+    <div class="trimmed-canvas">
+      <canvas width="250" height="250"></canvas>
+    </div>
+    <div class="final-image">
+      <canvas width="250" height="250"></canvas>
+    </div>
+  </div>
+
   <!-- require.js -->
-  <script data-main="/public/scripts/main" src="../scripts/bower_components/requirejs/require.js"></script>
+  <script data-main="/scripts/main" src="../scripts/bower_components/requirejs/require.js"></script>
   </body>
 </html>
