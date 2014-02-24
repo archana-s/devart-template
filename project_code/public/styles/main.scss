@@ -27,7 +27,7 @@ body {
       position: absolute;
       top: 50%;
       left: 50%;
-      background-image: url('/images/lotus.jpg');
+      background-image: url('/images/marlyn.jpg');
       background-repeat: no-repeat;
 
       .mask1 {
@@ -60,8 +60,8 @@ body {
     .img-canvas {
       canvas {
         position: absolute;
-        top: 10;
-        left: 10;
+        top: 0;
+        left: 0;
       }
     }
   }

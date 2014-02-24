@@ -35,7 +35,8 @@ define([
           'convertVisibleImageToCanvas',
           'cropCanvas',
           'cutOutBlackAlphaChannel',
-          'getRelevantImage'
+          'getRelevantImage',
+          'getTransform'
         );
       },
 
@@ -110,18 +111,40 @@ define([
       },
 
       buildFractals: function() {
-        var imgSlice = this.$el.find(".img-canvas canvas")[0];
         var rotation = 45;
+
+        var imgSlice = this.$el.find(".img-canvas canvas")[0];
         for (var i=0; i<this.totalSlices-1; i++) {
           $('.img-canvas').append('<canvas width="250" height="250"></canvas>');
-
           var canvas = $('.img-canvas canvas')[i+1];
           var context = canvas.getContext("2d");
           context.drawImage(imgSlice, 0, 0);
 
-          $(canvas).attr("id", "rotate-" + (rotation * (i+1)));
+          $(canvas).css("-webkit-transform", this.getTransform(i, 250) + "rotate(" + 45*(i+1) + "deg)");
           this.$el.find('.img-canvas').append(canvas);
         }
+      },
+
+      getTransform: function(i, canvasWidth) {
+        var a = 50;
+        switch(i) {
+          case 0:
+            return "translate(" + a + "px," + (canvasWidth/2) + "px)";
+          case 1:
+            return "translate(" + 0 + "px," + canvasWidth + "px)";
+          case 2:
+            return "translate(" + (-1*(canvasWidth/2)) + "px," + (a+canvasWidth) + "px)";
+          case 3:
+            return "translate(" + (-1*canvasWidth) + "px," + canvasWidth + "px)";
+          case 4:
+            return "translate(" + (-1*(a+canvasWidth)) + "px," + (canvasWidth/2) + "px)";
+          case 5:
+            return "translate(" + -1*canvasWidth + "px," + 0 + "px)";
+          case 6:
+            return "translate(" + -1*(canvasWidth/2) + "px," + (-1*a) + "px)";
+
+        }
+
       }
 
 
