@@ -27,7 +27,7 @@ body {
       position: absolute;
       top: 50%;
       left: 50%;
-      background-image: url('/images/marlyn.jpg');
+      background-image: url('/images/lotus.jpg');
       background-repeat: no-repeat;
 
       .mask1 {
@@ -62,12 +62,19 @@ body {
         position: absolute;
         top: 0;
         left: 0;
+        border-top-right-radius: 100%;
       }
     }
   }
 
   .work-area {
     display: none;
+
+    .canvas-elem {
+      canvas {
+        border-radius: 100%;
+      }
+    }
   }
 
   .content-box {
