@@ -41,13 +41,29 @@ define([
       },
 
       render: function() {
-        this.convertVisibleImageToCanvas();
+        //this.convertVisibleImageToCanvas();
+        this.rotateImage();
+      },
+
+      rotateImage: function() {
+        var self = this;
+        var index = 0;
+
+        var rotateInterval = setInterval(function(){
+          var image = self.$el.find('img');
+          image.removeClass();
+          image.addClass('rot-' + index * 15);
+          self.convertVisibleImageToCanvas();
+          index = index + 1;
+          if (index > (self.totalSlices * 3)) clearInterval(rotateInterval);
+        }, 250);
       },
 
       convertVisibleImageToCanvas: function() {
         var self = this;
-        html2canvas($('.full-view'), {
+        html2canvas($('.masks'), {
           onrendered: function(canvas) {
+            $('.canvas-elem').empty();
             $('.canvas-elem').append(canvas);
             self.getRelevantImage();
           }
@@ -63,6 +79,7 @@ define([
       cropCanvas: function() {
         var canvas = $('.trimmed-canvas canvas')[0];
         var context = canvas.getContext('2d');
+
         var imageObj = $('.canvas-elem canvas')[0];
 
         // draw cropped image
@@ -76,12 +93,13 @@ define([
         var destY = canvas.height / 2 - destHeight / 2;
 
         context.drawImage(imageObj, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
-        $('.canvas-elem').remove();
+        //$('.canvas-elem').remove();
       },
 
       cutOutBlackAlphaChannel: function() {
         var canvas = $('.final-image canvas')[0];
         var context = canvas.getContext("2d");
+
         var image = $('.trimmed-canvas canvas')[0];
 
         context.drawImage(image, 0, 0);
@@ -105,9 +123,9 @@ define([
         }
 
         context.putImageData(imgd, 0, 0);
+        $('.img-canvas').empty();
         $('.img-canvas').append(canvas);
-        $('.work-area').remove();
-        $('.full-view').remove();
+        $('.final-image').append("<canvas width='250' height='250'></canvas>");
       },
 
       buildFractals: function() {
@@ -120,28 +138,40 @@ define([
           var context = canvas.getContext("2d");
           context.drawImage(imgSlice, 0, 0);
 
-          $(canvas).css("-webkit-transform", this.getTransform(i, 250) + "rotate(" + 45*(i+1) + "deg)");
+          var transformAttr = "";
+          var rotationAngle = 0;
+
+          if (i % 2 === 0) {
+            transformAttr += "scaleX(-1) ";
+            rotationAngle = (-1) * (45 * (i+2));
+          }
+          else {
+            rotationAngle = 45 * (i+1);
+          }
+
+          transformAttr += this.getTransform(i, 250) + " rotate(" + rotationAngle + "deg)";
+          $(canvas).css("-webkit-transform", transformAttr);
           this.$el.find('.img-canvas').append(canvas);
         }
       },
 
       getTransform: function(i, canvasWidth) {
-        var a = 50;
+        var offset = 5;
         switch(i) {
           case 0:
-            return "translate(" + a + "px," + (canvasWidth/2) + "px)";
+            return "translate(0, 0)";
           case 1:
             return "translate(" + 0 + "px," + canvasWidth + "px)";
           case 2:
-            return "translate(" + (-1*(canvasWidth/2)) + "px," + (a+canvasWidth) + "px)";
+            return "translate(" + -1*offset + "px," + (canvasWidth-offset) + "px)";
           case 3:
-            return "translate(" + (-1*canvasWidth) + "px," + canvasWidth + "px)";
+            return "translate(" + (-1*(canvasWidth - offset)) + "px," + (canvasWidth - offset) + "px)";
           case 4:
-            return "translate(" + (-1*(a+canvasWidth)) + "px," + (canvasWidth/2) + "px)";
+            return "translate(" + (canvasWidth - (offset*2)) + "px," + canvasWidth + "px)";
           case 5:
-            return "translate(" + -1*canvasWidth + "px," + 0 + "px)";
+            return "translate(" + -1*(canvasWidth - (offset*2)) + "px," + 0 + "px)";
           case 6:
-            return "translate(" + -1*(canvasWidth/2) + "px," + (-1*a) + "px)";
+            return "translate(" + (canvasWidth - offset) + "px," + offset + "px)";
 
         }
 

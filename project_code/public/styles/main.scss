@@ -18,17 +18,22 @@ body {
     margin: 25px auto;
   }
 
-  .kaleiscope {
+  .masks {
 
-    .full-view {
+    width: 500px;
+    height: 500px;
+    position: relative;
+
+    img, .full-view {
       width: 500px;
       height: 500px;
       border-radius: 100%;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      background-image: url('/images/lotus.jpg');
-      background-repeat: no-repeat;
+      top: 0;
+      left: 0;
+    }
+
+    .full-view {
 
       .mask1 {
         position: absolute;
@@ -56,13 +61,29 @@ body {
         border-top: 252px solid transparent;
       }
     }
+  }
+
+  .kaleiscope {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin-bottom: 1000px;
 
     .img-canvas {
+      width: 500px;
+      height: 500px;
+
       canvas {
         position: absolute;
         top: 0;
         left: 0;
         border-top-right-radius: 100%;
+        backface-visibility: visible;
+      }
+
+      canvas:first-child {
+        transform: translate(5px, 5px);
+        -webkit-transform: translate(5px, 5px);
       }
     }
   }
