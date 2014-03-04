@@ -52,10 +52,10 @@ define([
         var rotateInterval = setInterval(function(){
           var image = self.$el.find('img');
           image.removeClass();
-          image.addClass('rot-' + index * 15);
+          image.addClass('rot-' + index * 5);
           self.convertVisibleImageToCanvas();
           index = index + 1;
-          if (index > (self.totalSlices * 3)) clearInterval(rotateInterval);
+          if (index > (self.totalSlices * 9)) clearInterval(rotateInterval);
         }, 250);
       },
 
