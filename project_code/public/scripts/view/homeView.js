@@ -16,9 +16,13 @@ define([
 
       totalDegrees: 360,
       totalSlices: 8,
+      imageIndex: 0,
 
       ui: {
-
+        'maskImage': '.masks img',
+        'displayImageContainer': '.display-image',
+        'displayImage': '.display-image img',
+        'kaleidoscope': '.kaleiscope'
       },
 
       events: {
@@ -36,14 +40,43 @@ define([
           'cropCanvas',
           'cutOutBlackAlphaChannel',
           'getRelevantImage',
-          'getTransform'
+          'getTransform',
+          'rotateImage',
+          'loopThroughImages',
+          'bindEvents'
         );
+
+        this.bindEvents();
       },
 
       render: function() {
-        //this.convertVisibleImageToCanvas();
-        this.rotateImage();
+        this.loopThroughImages();
       },
+
+      bindEvents: function() {
+        this.bind("home:rotateImage", this.rotateImage);
+        this.bind("home:rotationComplete", this.loopThroughImages);
+      },
+
+      loopThroughImages: function() {
+        $(this.ui.kaleidoscope).hide();
+        var self = this;
+        this.imageIndex++;
+        if (this.imageIndex <= 10) {
+          $(this.ui.displayImage).attr('src', '/images/image' + this.imageIndex + ".jpg");
+          $(this.ui.maskImage).attr('src', '/images/image' + this.imageIndex + ".jpg");
+          $(this.ui.displayImageContainer).show();
+
+          setTimeout(function(){
+            $(self.ui.displayImageContainer).hide();
+            setTimeout(function(){
+              $(self.ui.kaleidoscope).show();
+            }, 1000);
+            self.trigger("home:rotateImage");
+          }, 2000);
+        }
+      },
+
 
       rotateImage: function() {
         var self = this;
@@ -55,7 +88,10 @@ define([
           image.addClass('rot-' + index);
           self.convertVisibleImageToCanvas();
           index = index + 1;
-          if (index > 360) clearInterval(rotateInterval);
+          if (index > 360) {
+            clearInterval(rotateInterval);
+            self.trigger('home:rotationComplete');
+          }
         }, 50);
       },
 
