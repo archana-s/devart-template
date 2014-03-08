@@ -2,6 +2,10 @@
 @import "fonts";
 @import "mixins";
 
+$displayImageBorder: 15;
+$imgSize: 500;
+$displayImageSize: $displayImageBorder*2 + $imgSize;
+
 body {
   background-color: black;
   color: $dimYellow;
@@ -18,11 +22,28 @@ body {
     margin: 25px auto;
   }
 
+  .display-image {
+    z-index: 10;
+    width: $displayImageSize+px;
+    height: $displayImageSize+px;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%);
+
+    img {
+      width: $imgSize+px;
+      height: $imgSize+px;
+      padding: $displayImageBorder+px;
+    }
+  }
+
   .masks {
 
     width: 500px;
     height: 500px;
-    position: relative;
+    position: absolute;
+    top: 1500px;
 
     img, .full-view {
       width: 500px;
