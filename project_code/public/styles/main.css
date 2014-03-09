@@ -2440,7 +2440,7 @@ body .kaleiscope .img-canvas {
 body .kaleiscope .img-canvas canvas {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 200px;
   border-top-right-radius: 100%;
   -webkit-backface-visibility: visible;
   -ms-backface-visibility: visible;
