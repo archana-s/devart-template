@@ -67,13 +67,16 @@ define([
           $(this.ui.maskImage).attr('src', '/images/image' + this.imageIndex + ".jpg");
           $(this.ui.displayImageContainer).show();
 
-          setTimeout(function(){
+          $(this.ui.displayImageContainer).addClass('zoomTiltFade');
+
+          $(this.ui.displayImageContainer).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(evt){
             $(self.ui.displayImageContainer).hide();
+
             setTimeout(function(){
               $(self.ui.kaleidoscope).show();
             }, 1000);
             self.trigger("home:rotateImage");
-          }, 2000);
+          });
         }
       },
 
