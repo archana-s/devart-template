@@ -74,7 +74,7 @@ define([
 
             setTimeout(function(){
               $(self.ui.kaleidoscope).show();
-            }, 1000);
+            }, 150);
             self.trigger("home:rotateImage");
           });
         }
