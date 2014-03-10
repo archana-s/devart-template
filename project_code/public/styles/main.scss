@@ -27,6 +27,7 @@ body {
     width: $displayImageSize+px;
     height: $displayImageSize+px;
     top: 150px;
+    overflow: hidden;
 
     img {
       width: $imgSize+px;
@@ -94,7 +95,7 @@ body {
       canvas {
         position: absolute;
         top: 0;
-        left: 200px;
+        left: 240px;
         border-top-right-radius: 100%;
         backface-visibility: visible;
       }
