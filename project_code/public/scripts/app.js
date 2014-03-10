@@ -17,6 +17,13 @@ define([
 
     GoGazingApp.on("initialize:after", function(){
       Backbone.history.start({pushState: true});
+
+      // Prevent scroll bars or people can see your dirty little canvases that make up this pretty kaleidoscope :)
+      $('body').on('mousewheel', function(evt){
+        evt.stopPropagation();
+        evt.preventDefault();
+      });
+
     });
 
     return GoGazingApp;

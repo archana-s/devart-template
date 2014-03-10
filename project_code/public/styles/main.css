@@ -25,34 +25,35 @@
 
 @-webkit-keyframes zoomTiltAndFade {
   0% {
+    border-radius: 0;
     opacity: 1;
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
+  }
+
+  10% {
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
   }
 
   20% {
-    -webkit-transform: scale(1.1, 1.1);
-    transform: scale(1.1, 1.1);
+    -webkit-transform: rotate(2deg) scale(1.1, 1.1);
+    transform: rotate(2deg) scale(1.1, 1.1);
   }
 
   30% {
-    -webkit-transform: rotate(20deg) scale(1.1, 1.1);
-    transform: rotate(20deg) scale(1.1, 1.1);
+    -webkit-transform: rotate(-2deg) scale(1.1, 1.1);
+    transform: rotate(-2deg) scale(1.1, 1.1);
   }
 
   40% {
-    -webkit-transform: rotate(-20deg) scale(1.1, 1.1);
-    transform: rotate(-20deg) scale(1.1, 1.1);
-  }
-
-  50% {
     -webkit-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
     -webkit-filter: blur(0px);
     filter: blur(0px);
   }
 
-  60% {
+  50% {
     opacity: 1;
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
@@ -60,46 +61,53 @@
     filter: blur(0px);
   }
 
-  65% {
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
+  55% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
     opacity: 1;
+    border-radius: 0;
+  }
+
+  57% {
+    border-radius: 100%;
   }
 
   100% {
-    -webkit-filter: blur(10px);
-    filter: blur(10px);
-    opacity: 0;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    opacity: 0.3;
+    border-radius: 100%;
   }
 }
 
 @keyframes zoomTiltAndFade {
   0% {
+    border-radius: 0;
     opacity: 1;
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     transform: scale(1, 1);
+  }
+
+  10% {
+    -webkit-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
   }
 
   20% {
-    -webkit-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    transform: scale(1.1, 1.1);
+    -webkit-transform: rotate(2deg) scale(1.1, 1.1);
+    -ms-transform: rotate(2deg) scale(1.1, 1.1);
+    transform: rotate(2deg) scale(1.1, 1.1);
   }
 
   30% {
-    -webkit-transform: rotate(20deg) scale(1.1, 1.1);
-    -ms-transform: rotate(20deg) scale(1.1, 1.1);
-    transform: rotate(20deg) scale(1.1, 1.1);
+    -webkit-transform: rotate(-2deg) scale(1.1, 1.1);
+    -ms-transform: rotate(-2deg) scale(1.1, 1.1);
+    transform: rotate(-2deg) scale(1.1, 1.1);
   }
 
   40% {
-    -webkit-transform: rotate(-20deg) scale(1.1, 1.1);
-    -ms-transform: rotate(-20deg) scale(1.1, 1.1);
-    transform: rotate(-20deg) scale(1.1, 1.1);
-  }
-
-  50% {
     -webkit-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
@@ -107,7 +115,7 @@
     filter: blur(0px);
   }
 
-  60% {
+  50% {
     opacity: 1;
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
@@ -116,16 +124,22 @@
     filter: blur(0px);
   }
 
-  65% {
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
+  55% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
     opacity: 1;
+    border-radius: 0;
+  }
+
+  57% {
+    border-radius: 100%;
   }
 
   100% {
-    -webkit-filter: blur(10px);
-    filter: blur(10px);
-    opacity: 0;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    opacity: 0.3;
+    border-radius: 100%;
   }
 }
 
@@ -2384,6 +2398,7 @@ body .display-image {
   width: 530px;
   height: 530px;
   top: 150px;
+  overflow: hidden;
 }
 body .display-image img {
   width: 500px;
@@ -2440,7 +2455,7 @@ body .kaleiscope .img-canvas {
 body .kaleiscope .img-canvas canvas {
   position: absolute;
   top: 0;
-  left: 200px;
+  left: 240px;
   border-top-right-radius: 100%;
   -webkit-backface-visibility: visible;
   -ms-backface-visibility: visible;
