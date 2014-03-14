@@ -17,6 +17,7 @@ define([
       totalDegrees: 360,
       totalSlices: 8,
       imageIndex: 0,
+      rotationIndex: 0,
 
       ui: {
         'maskImage': '.masks img',
@@ -43,6 +44,8 @@ define([
           'getTransform',
           'rotateImage',
           'loopThroughImages',
+          'showElement',
+          'hideElement',
           'bindEvents'
         );
 
@@ -58,8 +61,20 @@ define([
         this.bind("home:rotationComplete", this.loopThroughImages);
       },
 
+      hideElement: function(element) {
+        if ($(element).hasClass('show')) $(element).removeClass('show');
+        $(element).addClass('hide');
+      },
+
+      showElement: function(element) {
+        if ($(element).hasClass('hide')) $(element).removeClass('hide');
+        $(element).addClass('show');
+      },
+
       loopThroughImages: function() {
-        $(this.ui.kaleidoscope).hide();
+        this.hideElement(this.ui.kaleidoscope);
+
+        $(this.ui.kalei)
         var self = this;
         this.imageIndex++;
         if (this.imageIndex <= 10) {
@@ -71,27 +86,23 @@ define([
 
           $(this.ui.displayImageContainer).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(evt){
             $(self.ui.displayImageContainer).hide();
-
-            setTimeout(function(){
-              $(self.ui.kaleidoscope).show();
-            }, 150);
+            self.showElement(self.ui.kaleidoscope);
             self.trigger("home:rotateImage");
           });
         }
       },
 
-
       rotateImage: function() {
         var self = this;
-        var index = 0;
+        this.rotationIndex = 0;
 
         var rotateInterval = setInterval(function(){
           var image = self.$el.find('img');
           image.removeClass();
-          image.addClass('rot-' + index);
+          image.addClass('rot-' + self.rotationIndex);
           self.convertVisibleImageToCanvas();
-          index = index + 1;
-          if (index > 360) {
+          self.rotationIndex = self.rotationIndex + 1;
+          if (self.rotationIndex > 360) {
             clearInterval(rotateInterval);
             self.trigger('home:rotationComplete');
           }
