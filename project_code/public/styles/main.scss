@@ -1,6 +1,7 @@
 @import "colors";
 @import "fonts";
 @import "mixins";
+@import "reset";
 
 $displayImageBorder: 15;
 $imgSize: 500;
@@ -11,13 +12,18 @@ body {
   color: $dimYellow;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
-
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   position: relative;
 
+  .header {
+    position: absolute;
+    left: 45px;
+    width: 100%;
+  }
+
   .contents {
-    width: 800px;
+    width: 500px;
     height: 1000px;
     margin: 25px auto;
   }
@@ -98,6 +104,7 @@ body {
         left: 240px;
         border-top-right-radius: 100%;
         backface-visibility: visible;
+
       }
 
       canvas:first-child {
