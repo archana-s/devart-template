@@ -78,8 +78,8 @@ define([
         var self = this;
         this.imageIndex++;
         if (this.imageIndex <= 10) {
-          $(this.ui.displayImage).attr('src', '../images/image' + this.imageIndex + ".jpg");
-          $(this.ui.maskImage).attr('src', '../images/image' + this.imageIndex + ".jpg");
+          $(this.ui.displayImage).attr('src', '../../images/image' + this.imageIndex + ".jpg");
+          $(this.ui.maskImage).attr('src', '../../images/image' + this.imageIndex + ".jpg");
           $(this.ui.displayImageContainer).show();
 
           $(this.ui.displayImageContainer).addClass('zoomTiltFade');
