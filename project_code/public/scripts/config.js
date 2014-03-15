@@ -6,7 +6,7 @@ require.config({
 
   paths: {
     json3: './bower_components/json3/lib/json3',
-    jquery: './bower_components/jquery/jquery',
+    jquery: './bower_components/jquery/dist/jquery',
     handlebars: './bower_components/handlebars/handlebars',
     underscore: './bower_components/lodash/dist/lodash.compat',
     backbone: './bower_components/backbone-amd/backbone',
