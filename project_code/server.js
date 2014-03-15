@@ -17,5 +17,3 @@ console.log("Express started on " + port);
 app.get("/", function(req, res){
   res.render('index');
 });
-
-app.use(express.static(__dirname + '/public'));
