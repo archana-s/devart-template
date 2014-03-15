@@ -6,7 +6,7 @@ var path = require('path');
 var hbs = require('hbs');
 
 app.set('views', __dirname + '/views');
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 app.engine('html', hbs.__express);
 app.set('view engine', 'html');
