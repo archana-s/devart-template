@@ -74,7 +74,6 @@ define([
       loopThroughImages: function() {
         this.hideElement(this.ui.kaleidoscope);
 
-        $(this.ui.kalei)
         var self = this;
         this.imageIndex++;
         if (this.imageIndex <= 10) {
@@ -106,7 +105,7 @@ define([
             clearInterval(rotateInterval);
             self.trigger('home:rotationComplete');
           }
-        }, 50);
+        }, 150);
       },
 
       convertVisibleImageToCanvas: function() {
@@ -143,7 +142,6 @@ define([
         var destY = canvas.height / 2 - destHeight / 2;
 
         context.drawImage(imageObj, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
-        //$('.canvas-elem').remove();
       },
 
       cutOutBlackAlphaChannel: function() {
