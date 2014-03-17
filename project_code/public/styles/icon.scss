@@ -1,0 +1,47 @@
+
+.icon {
+  position: relative;
+  top: 20px;
+  left: 40px;
+
+  width: 40px;
+  height: 40px;
+
+  .one, .two, .three, .four {
+    width: 9px;
+    height: 9px;
+    position: absolute;
+  }
+
+  .two, .four {
+    border-radius: 100%;
+  }
+
+  .one, .three {
+    transform: rotate(45deg);
+  }
+
+  .one {
+    left: 15px;
+    background-color: rgb(67, 198, 225);
+  }
+
+  .two {
+    left: 5px;
+    top: 9px;
+    background-color: rgb(255, 101, 96);
+  }
+
+  .three {
+    background-color: rgb(246, 191, 75);
+    top: 18px;
+    left: 15px;
+  }
+
+  .four {
+    background-color: rgb(104, 169, 109);
+    left: 25px;
+    top: 9px;
+  }
+}
+

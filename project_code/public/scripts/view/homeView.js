@@ -23,7 +23,8 @@ define([
         'maskImage': '.masks img',
         'displayImageContainer': '.display-image',
         'displayImage': '.display-image img',
-        'kaleidoscope': '.kaleiscope'
+        'kaleidoscope': '.kaleiscope',
+        'kaleidoscope_gradient': '.kaleiscope-gradient'
       },
 
       events: {
@@ -73,6 +74,7 @@ define([
 
       loopThroughImages: function() {
         this.hideElement(this.ui.kaleidoscope);
+        $(this.ui.kaleidoscope_gradient).hide();
 
         var self = this;
         this.imageIndex++;
@@ -85,6 +87,7 @@ define([
 
           $(this.ui.displayImageContainer).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(evt){
             $(self.ui.displayImageContainer).hide();
+            $(self.ui.kaleidoscope_gradient).show();
             self.showElement(self.ui.kaleidoscope);
             self.trigger("home:rotateImage");
           });
