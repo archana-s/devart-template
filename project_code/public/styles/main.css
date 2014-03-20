@@ -222,9 +222,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  transform: translate(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .rot-1 {
@@ -2891,6 +2891,7 @@ body .header {
   left: 45px;
   width: 100%;
   position: relative;
+  z-index: 100;
 }
 body .header .icon {
   position: absolute;
@@ -2901,21 +2902,27 @@ body .header .title {
   left: 60px;
 }
 body .contents {
-  width: 500px;
   height: 1000px;
   margin: 25px auto;
 }
-body .display-image {
+body .img-container {
+  width: 800px;
+  height: 600px;
+}
+body .img-container .display-image {
   z-index: 10;
   width: 530px;
   height: 530px;
-  top: 150px;
   overflow: hidden;
+  margin: auto;
 }
-body .display-image img {
+body .img-container .display-image img {
   width: 500px;
   height: 500px;
   padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 body .masks {
   width: 500px;
@@ -2954,7 +2961,16 @@ body .masks .full-view .mask3 {
   border-bottom: 252px solid black;
   border-top: 252px solid transparent;
 }
-body .kaleiscope-gradient {
+body .scope-view {
+  width: 575px;
+  height: 575px;
+}
+body .scope-view .cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scope-view .cover .kaleiscope-gradient {
   /* FF3.6+ */
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(52%, rgba(0, 0, 0, 0.7)), color-stop(62%, black), color-stop(100%, black));
   /* Chrome,Safari4+ */
@@ -2968,22 +2984,18 @@ body .kaleiscope-gradient {
   /* IE6-9 fallback on horizontal gradient */
   width: 575px;
   height: 575px;
-  position: absolute;
-  top: -15px;
-  left: 415px;
   display: none;
 }
-body .kaleiscope {
+body .scope-view .cover .kaleiscope {
   width: 500px;
   height: 500px;
-  margin-bottom: 1000px;
 }
-body .kaleiscope .img-canvas {
+body .scope-view .cover .kaleiscope .img-canvas {
   width: 500px;
   height: 500px;
   position: relative;
 }
-body .kaleiscope .img-canvas canvas {
+body .scope-view .cover .kaleiscope .img-canvas canvas {
   position: absolute;
   top: 0;
   left: 240px;
@@ -2992,7 +3004,7 @@ body .kaleiscope .img-canvas canvas {
   -ms-backface-visibility: visible;
   backface-visibility: visible;
 }
-body .kaleiscope .img-canvas canvas:first-child {
+body .scope-view .cover .kaleiscope .img-canvas canvas:first-child {
   -webkit-transform: translate(5px, 5px);
   -ms-transform: translate(5px, 5px);
   transform: translate(5px, 5px);
