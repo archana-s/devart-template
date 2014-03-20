@@ -216,13 +216,13 @@ define([
           case 2:
             return "translate(" + -1*offset + "px," + (canvasWidth-offset) + "px)";
           case 3:
-            return "translate(" + (-1*(canvasWidth - offset)) + "px," + (canvasWidth - offset) + "px)";
+            return "translate(" + (-1*(canvasWidth - offset - 1)) + "px," + (canvasWidth - offset - 1) + "px)";
           case 4:
             return "translate(" + (canvasWidth - (offset*2)) + "px," + canvasWidth + "px)";
           case 5:
             return "translate(" + -1*(canvasWidth - (offset*2)) + "px," + 0 + "px)";
           case 6:
-            return "translate(" + (canvasWidth - offset) + "px," + offset + "px)";
+            return "translate(" + (canvasWidth - offset - 1) + "px," + offset + "px)";
 
         }
 
