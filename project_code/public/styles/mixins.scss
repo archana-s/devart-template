@@ -1,6 +1,50 @@
+$imgAnimDuration: 3s;
+
 .zoomTiltFade {
-  animation: zoomTiltAndFade 3s;
+  animation: zoomTiltAndFade $imgAnimDuration;
 }
+
+.tiltFade {
+  animation: tiltAndFade $imgAnimDuration;
+}
+
+@keyframes tiltAndFade {
+  0%   {
+    transform: rotate(0deg);
+    border-radius: 0;
+    opacity: 1;
+  }
+
+  40% {
+    filter: blur(0px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  70% {
+    opacity: 1;
+    border-radius: 100%;
+    transform: rotate(0deg);
+  }
+
+  80% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0.3;
+    border-radius: 100%;
+    transform: rotate(360deg);
+  }
+}
+
 
 @keyframes zoomTiltAndFade {
   0%   {
@@ -23,7 +67,6 @@
 
   40% {
     transform: scale(1.1, 1.1);
-    filter: blur(0px);
   }
 
   50% {
@@ -38,12 +81,15 @@
 
   70% {
     border-radius: 100%;
-    filter: blur(0px);
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.9;
   }
 
   100% {
-    filter: blur(1px);
-    opacity: 0.1;
+    opacity: 0.3;
     border-radius: 100%;
   }
 }
