@@ -84,6 +84,7 @@ define([
           $(this.ui.displayImageContainer).show();
 
           $(this.ui.displayImageContainer).addClass('zoomTiltFade');
+          $(this.ui.displayImage).addClass('tiltFade');
 
           $(this.ui.displayImageContainer).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(evt){
             $(self.ui.displayImageContainer).hide();

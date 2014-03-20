@@ -35,6 +35,96 @@
   animation: zoomTiltAndFade 3s;
 }
 
+.tiltFade {
+  -webkit-animation: tiltAndFade 3s;
+  animation: tiltAndFade 3s;
+}
+
+@-webkit-keyframes tiltAndFade {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-radius: 0;
+    opacity: 1;
+  }
+
+  40% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  70% {
+    opacity: 1;
+    border-radius: 100%;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  80% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0.3;
+    border-radius: 100%;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tiltAndFade {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-radius: 0;
+    opacity: 1;
+  }
+
+  40% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  70% {
+    opacity: 1;
+    border-radius: 100%;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  80% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0.3;
+    border-radius: 100%;
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 @-webkit-keyframes zoomTiltAndFade {
   0% {
     border-radius: 0;
@@ -61,8 +151,6 @@
   40% {
     -webkit-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
   }
 
   50% {
@@ -78,14 +166,15 @@
 
   70% {
     border-radius: 100%;
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.9;
   }
 
   100% {
-    -webkit-filter: blur(1px);
-    filter: blur(1px);
-    opacity: 0.1;
+    opacity: 0.3;
     border-radius: 100%;
   }
 }
@@ -121,8 +210,6 @@
     -webkit-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
   }
 
   50% {
@@ -139,14 +226,15 @@
 
   70% {
     border-radius: 100%;
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.9;
   }
 
   100% {
-    -webkit-filter: blur(1px);
-    filter: blur(1px);
-    opacity: 0.1;
+    opacity: 0.3;
     border-radius: 100%;
   }
 }
@@ -2913,8 +3001,9 @@ body .img-container .display-image {
   z-index: 10;
   width: 530px;
   height: 530px;
-  overflow: hidden;
   margin: auto;
+  position: relative;
+  overflow: hidden;
 }
 body .img-container .display-image img {
   width: 500px;

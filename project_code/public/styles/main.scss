@@ -48,8 +48,9 @@ body {
       z-index: 10;
       width: $displayImageSize+px;
       height: $displayImageSize+px;
-      overflow: hidden;
       margin: auto;
+      position:relative;
+      overflow:hidden;
 
       img {
         width: $imgSize+px;
@@ -60,7 +61,6 @@ body {
         left: 0;
       }
     }
-
   }
 
   .masks {

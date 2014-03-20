@@ -1,6 +1,6 @@
 {
   "name": "DevArtKaleidescope",
-  "version": "0.9.0-18",
+  "version": "0.9.0-19",
   "description": "Kaleidoscope on images",
   "main": "server.js",
   "repository": {
