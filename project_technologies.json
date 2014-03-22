@@ -1,12 +1,12 @@
 {
     "technologies": {
         "apis": [
-            'Picasa'
+            "Picasa"
         ],
         "platforms": [
         ],
         "toolkits": [
-            "Grunt Bower HTML CSS3 SASS Node.js jQuery Backbone.js Marionette.js"
+            "CSS3", "Node.js", "jQuery", "Backbone.js",  "Marionette.js"
         ]
     },
     "themes": [
