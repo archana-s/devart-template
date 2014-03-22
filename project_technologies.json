@@ -6,7 +6,7 @@
         "platforms": [
         ],
         "toolkits": [
-            "Grunt", "bower", "HTML", "CSS3", "SASS",  "Node.js", "jQuery", "Backbone.js",  "Marionette.js"
+            "CSS3", "Node.js", "jQuery", "Backbone.js",  "Marionette.js"
         ]
     },
     "themes": [
