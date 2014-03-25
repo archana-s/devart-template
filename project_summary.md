@@ -1,5 +1,5 @@
-# Project Title
-Picasa Kaleidescope using HTML5
+## Project Title
+Kaleidoscope Lens
 
 ## Authors
 - Archana Sankaranarayanan, archana-s
