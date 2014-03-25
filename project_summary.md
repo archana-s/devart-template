@@ -1,4 +1,4 @@
-Kaleidoscope Lens
+#Kaleidoscope Lens
 
 ## Authors
 - Archana Sankaranarayanan, archana-s
