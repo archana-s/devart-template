@@ -24,11 +24,12 @@ define([
         'displayImageContainer': '.display-image',
         'displayImage': '.display-image img',
         'kaleidoscope': '.kaleiscope',
-        'kaleidoscope_gradient': '.kaleiscope-gradient'
+        'kaleidoscope_gradient': '.kaleiscope-gradient',
+        'keywords': 'input.keywords'
       },
 
-      events: {
-
+      events : {
+        'click button.search': 'picasaSearch'
       },
 
       initialize: function(options) {
@@ -47,6 +48,7 @@ define([
           'loopThroughImages',
           'showElement',
           'hideElement',
+          'picasaSearch',
           'bindEvents'
         );
 
@@ -60,6 +62,13 @@ define([
       bindEvents: function() {
         this.bind("home:rotateImage", this.rotateImage);
         this.bind("home:rotationComplete", this.loopThroughImages);
+      },
+
+      picasaSearch: function() {
+        $.get('/photos?q=' + $(this.ui.keywords).val(), function(result){
+          console.log("Reaches the response section in View");
+          console.log(result);
+        });
       },
 
       hideElement: function(element) {
@@ -78,7 +87,7 @@ define([
 
         var self = this;
         this.imageIndex++;
-        if (this.imageIndex <= 10) {
+        if (this.imageIndex <= 15) {
           $(this.ui.displayImage).attr('src', '/images/image' + this.imageIndex + ".jpg");
           $(this.ui.maskImage).attr('src', '/images/image' + this.imageIndex + ".jpg");
           $(this.ui.displayImageContainer).show();

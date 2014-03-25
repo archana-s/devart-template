@@ -3110,3 +3110,9 @@ body .content-box {
   top: 30px;
   padding: 25px 40px;
 }
+body .action-tab {
+  background-color: grey;
+  position: absolute;
+  left: 10px;
+  top: 200px;
+}
