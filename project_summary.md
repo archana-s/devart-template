@@ -85,7 +85,7 @@ Code snippet:
 ```
 5. Create a 8-slice fractal with this one slice in canvas. Each adjacent slice is a mirror image of the other. All of this is purely a CSS transform with rotate and transition
 Code snippet:
-``` buildfractals
+   ``` buildfractals
   buildFractals: function() {
         var rotation = 45;
 
@@ -116,7 +116,7 @@ Code snippet:
 6. Now you have a beautiful pattern with the first slice. 
 7. Rotate the image by 1deg and repeat from step 2 again.
 Code snippet:
-``` rotateImage
+   ``` rotateImage
   rotateImage: function() {
         var self = this;
         this.rotationIndex = 0;
