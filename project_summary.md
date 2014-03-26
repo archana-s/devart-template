@@ -143,4 +143,4 @@ Code snippet:
 
 ## Fixes 
 1. Image sizes need to be proportionate to their original sizes 
-2. Increase in kaleidoscope smoothness (by improving performance)
+2. Increase in kaleidoscope smoothness (by improving performance) especially in mobile devices
