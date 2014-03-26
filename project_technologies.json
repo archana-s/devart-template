@@ -6,7 +6,7 @@
         "platforms": [
         ],
         "toolkits": [
-            "CSS3", "Node.js", "jQuery", "Backbone.js",  "Marionette.js"
+             "Node.js", "HTML Canvas"
         ]
     },
     "themes": [
