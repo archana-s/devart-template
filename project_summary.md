@@ -20,7 +20,7 @@ Images are atleast 500px in width or height.
 4. Ofcourse this canvas will have the masked regions too. So crop out the masked regions. Remove any residual borders and mask regions by removing alpha channel on those. 
 
 Code snippet:
-  ```
+  ```cropImage
   cropCanvas: function() {
         var canvas = $('.trimmed-canvas canvas')[0];
         var context = canvas.getContext('2d');
@@ -76,7 +76,7 @@ Code snippet:
 5. Create a 8-slice fractal with this one slice in canvas. Each adjacent slice is a mirror image of the other. All of this is purely a CSS transform with rotate and transition
 
 Code snippet:
-  ```
+  ```buildfractals
   buildFractals: function() {
         var rotation = 45;
 
@@ -111,7 +111,7 @@ Code snippet:
 
 Code snippet:
 
-```
+```rotateImage
   rotateImage: function() {
         var self = this;
         this.rotationIndex = 0;
@@ -128,7 +128,7 @@ Code snippet:
           }
         }, 150);
       },
-      ```
+  ```
 
 8. This continues all the way till 360deg to create a full kaleidoscope rotation of the image. 
 9. Then comes the next image and it all continues again.
