@@ -1,7 +1,7 @@
 #Kaleidoscope Lens
 
 ## Authors
-- Archana Sankaranarayanan, archana-s
+- Archana Sankaranarayanan (archana-s on git)
 
 ## Description
 A kaleidoscope that runs on images. Instead of tiny little glass particles like a traditional kaleidoscope, this one splits images in to smaller chunks, runs it through  the mirrors for creating perfectly symmetric and magical patterns. You will never see images the same way again. 
