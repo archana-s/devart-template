@@ -26,15 +26,10 @@ Get the kaleidoscope to rotate smoothly for every one degree of the image.
 Stages 1 and 2 are complete. I will need another 2 months to finish up the last three stages.
 
 ## Steps in creating the kaleidoscope
-1. Get an image - I am getting all the images from Picasa Featured Images. I haven't yet figured out the frequency of updating the picasa images.  
-
-API used to get images: https://picasaweb.google.com/data/feed/api/featured 
-Images are atleast 500px in width or height. 
-
+1. Get an image - I am getting all the images from Picasa Featured Images. I haven't yet figured out the frequency of updating the picasa images. API used to get images: https://picasaweb.google.com/data/feed/api/featured . Images are atleast 500px in width or height.
 2. (Consider the image in a circle) Use CSS to mask out all regions of the image except the first 45deg of the image. (A slice of a 8-slice-pizza)
 3. Convert this in to a canvas 
-4. Ofcourse this canvas will have the masked regions too. So crop out the masked regions. Remove any residual borders and mask regions by removing alpha channel on those. 
-
+4. Ofcourse this canvas will have the masked regions too. So crop out the masked regions. Remove any residual borders and mask regions by removing alpha channel on those.
 Code snippet:
   ``` cropImage
   cropCanvas: function() {
@@ -88,9 +83,7 @@ Code snippet:
         $('.final-image').append("<canvas width='250' height='250'></canvas>");
       },
 ```
-
 5. Create a 8-slice fractal with this one slice in canvas. Each adjacent slice is a mirror image of the other. All of this is purely a CSS transform with rotate and transition
-
 Code snippet:
   ``` buildfractals
   buildFractals: function() {
@@ -120,11 +113,8 @@ Code snippet:
         }
       },
       ```
-
-
 6. Now you have a beautiful pattern with the first slice. 
 7. Rotate the image by 1deg and repeat from step 2 again.
-
 Code snippet:
 
 ``` rotateImage
@@ -145,6 +135,5 @@ Code snippet:
         }, 150);
       },
   ```
-
 8. This continues all the way till 360deg to create a full kaleidoscope rotation of the image. 
 9. Then comes the next image and it all continues again.
