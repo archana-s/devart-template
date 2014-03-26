@@ -141,6 +141,6 @@ Code snippet:
 8. This continues all the way till 360deg to create a full kaleidoscope rotation of the image. 
 9. Then comes the next image and it all continues again.
 
-## Fixes 
+## Fixes Needed
 1. Image sizes need to be proportionate to their original sizes 
 2. Increase in kaleidoscope smoothness (by improving performance) especially in mobile devices
