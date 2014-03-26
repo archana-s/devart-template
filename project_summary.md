@@ -85,7 +85,7 @@ Code snippet:
 ```
 5. Create a 8-slice fractal with this one slice in canvas. Each adjacent slice is a mirror image of the other. All of this is purely a CSS transform with rotate and transition
 Code snippet:
-  ``` buildfractals
+``` buildfractals
   buildFractals: function() {
         var rotation = 45;
 
@@ -112,11 +112,10 @@ Code snippet:
           this.$el.find('.img-canvas').append(canvas);
         }
       },
-      ```
+```
 6. Now you have a beautiful pattern with the first slice. 
 7. Rotate the image by 1deg and repeat from step 2 again.
 Code snippet:
-
 ``` rotateImage
   rotateImage: function() {
         var self = this;
@@ -134,6 +133,6 @@ Code snippet:
           }
         }, 150);
       },
-  ```
+```
 8. This continues all the way till 360deg to create a full kaleidoscope rotation of the image. 
 9. Then comes the next image and it all continues again.
