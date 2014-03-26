@@ -21,6 +21,7 @@ Images are atleast 500px in width or height.
 
 Code snippet:
 
+
   cropCanvas: function() {
         var canvas = $('.trimmed-canvas canvas')[0];
         var context = canvas.getContext('2d');
@@ -76,6 +77,8 @@ Code snippet:
 5. Create a 8-slice fractal with this one slice in canvas. Each adjacent slice is a mirror image of the other. All of this is purely a CSS transform with rotate and transition
 
 Code snippet:
+
+
   buildFractals: function() {
         var rotation = 45;
 
@@ -108,6 +111,8 @@ Code snippet:
 7. Rotate the image by 1deg and repeat from step 2 again.
 
 Code snippet:
+
+
   rotateImage: function() {
         var self = this;
         this.rotationIndex = 0;
