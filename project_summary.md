@@ -26,10 +26,13 @@ Get the kaleidoscope to rotate smoothly for every one degree of the image.
 Stages 1 and 2 are complete. I will need another 2 months to finish up the last three stages.
 
 ## Steps in creating the kaleidoscope
-1. Get an image - I am getting all the images from Picasa Featured Images. I haven't yet figured out the frequency of updating the picasa images. API used to get images: https://picasaweb.google.com/data/feed/api/featured . Images are atleast 500px in width or height.
-2. (Consider the image in a circle) Use CSS to mask out all regions of the image except the first 45deg of the image. (A slice of a 8-slice-pizza)
+1. Get an image - I am getting all the images from Picasa Featured Images. I haven't yet figured out the frequency of updating the picasa images. API used to get images: https://picasaweb.google.com/data/feed/api/featured . Images are atleast 500px in width or height.<br>
+<img src="https://lh4.googleusercontent.com/-pt0UJSZ_aVY/UnOpIB4odtI/AAAAAAABnls/1sZnSJqEHBI/s622/13%2520-%25201.jpg">
+2. (Consider the image in a circle) Use CSS to mask out all regions of the image except the first 45deg of the image. (A slice of a 8-slice-pizza)<br>
+<img src="./project_images/firstStep.jpg" width="300" height="300"/>
 3. Convert this in to a canvas 
-4. Ofcourse this canvas will have the masked regions too. So crop out the masked regions. Remove any residual borders and mask regions by removing alpha channel on those.
+4. Ofcourse this canvas will have the masked regions too. So crop out the masked regions. Remove any residual borders and mask regions by removing alpha channel on those.<br>
+<img src="./project_images/secondStep.jpg" width="200"/><br>
 Code snippet:
   ``` cropImage
   cropCanvas: function() {
@@ -83,7 +86,8 @@ Code snippet:
         $('.final-image').append("<canvas width='250' height='250'></canvas>");
       },
 ```
-5. Create a 8-slice fractal with this one slice in canvas. Each adjacent slice is a mirror image of the other. All of this is purely a CSS transform with rotate and transition
+5. Create a 8-slice fractal with this one slice in canvas. Each adjacent slice is a mirror image of the other. All of this is purely a CSS transform with rotate and transition<br>
+<img src="./project_images/thirdStep.jpg" width="300" height="300"/><br>
 Code snippet:
    ``` buildfractals
   buildFractals: function() {
