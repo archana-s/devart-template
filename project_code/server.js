@@ -20,15 +20,11 @@ app.get("/", function(req, res){
 
 app.get("/photos", function(req, res){
 
-  //1. Get the keyword
-  var searchTerm = encodeURIComponent((req.query.q).trim());
-
-  // 2. Call Picasa API and get images for the search keyword
-  // 3. Use xml2js to convert it to a js object
-  // 4. download 500 * 500 15 images
+  // 1. Call Picasa API and get featured images
+  // 2. Use xml2js to convert it to a js object
+  // 3. download 500 * 500 15 images
   var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
   var xhr = new XMLHttpRequest();
-  //xhr.open( "GET", "https://picasaweb.google.com/data/feed/api/all?kind=photo&q=" + searchTerm, false );
   xhr.open("GET", "https://picasaweb.google.com/data/feed/api/featured", false );
   xhr.send( null );
   var parseString = require('xml2js').parseString;
