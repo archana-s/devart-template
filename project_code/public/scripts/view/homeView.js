@@ -5,7 +5,6 @@ define([
   'backbone',
   'jquery',
   'underscore',
-  'velocity',
   'html2canvas'
 ],
 
@@ -199,29 +198,19 @@ define([
           var context = canvas.getContext("2d");
           context.drawImage(imgSlice, 0, 0);
 
-          var transformVal = this.getTransform(i, 250);
+          var transformAttr = "";
           var rotationAngle = 0;
 
           if (i % 2 === 0) {
+            transformAttr += "scaleX(-1) ";
             rotationAngle = (-1) * (45 * (i+2));
           }
           else {
             rotationAngle = 45 * (i+1);
           }
 
-          var options = {
-            scaleX: i % 2 === 0 ? -1 : 1,
-            translateX: transformVal.x,
-            translateY: transformVal.y,
-            rotateZ: rotationAngle + "deg"
-          };
-
-          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $(canvas).velocity(options, {duration: 0, delay: false, mobileHA: true});
-          }
-          else {
-            $(canvas).velocity(options, {duration: 0, delay: false});
-          }
+          transformAttr += this.getTransform(i, 250) + " rotate(" + rotationAngle + "deg)";
+          $(canvas).css("-webkit-transform", transformAttr);
           this.$el.find('.img-canvas').append(canvas);
         }
       },
@@ -230,19 +219,19 @@ define([
         var offset = 5;
         switch(i) {
           case 0:
-            return {x: '0px', y:'0px'};
+            return "translate(0, 0)";
           case 1:
-            return {x: '0px', y: canvasWidth + 'px'};
+            return "translate(" + 0 + "px," + canvasWidth + "px)";
           case 2:
-            return {x: -1*offset + "px", y: (canvasWidth-offset) + "px"};
+            return "translate(" + -1*offset + "px," + (canvasWidth-offset) + "px)";
           case 3:
-            return {x: (-1*(canvasWidth - offset - 1)) + "px", y: (canvasWidth - offset - 1) + "px"};
+            return "translate(" + (-1*(canvasWidth - offset - 1)) + "px," + (canvasWidth - offset - 1) + "px)";
           case 4:
-            return {x: (canvasWidth - (offset*2))  + "px", y: canvasWidth + "px"};
+            return "translate(" + (canvasWidth - (offset*2)) + "px," + canvasWidth + "px)";
           case 5:
-            return {x: -1*(canvasWidth - (offset*2))  + "px", y: 0 + "px"};
+            return "translate(" + -1*(canvasWidth - (offset*2)) + "px," + 0 + "px)";
           case 6:
-            return {x: (canvasWidth - offset - 1)   + "px", y: offset + "px"};
+            return "translate(" + (canvasWidth - offset - 1) + "px," + offset + "px)";
 
         }
 
