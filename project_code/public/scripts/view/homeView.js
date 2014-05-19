@@ -5,7 +5,6 @@ define([
   'backbone',
   'jquery',
   'underscore',
-  'velocity',
   'html2canvas'
 ],
 
