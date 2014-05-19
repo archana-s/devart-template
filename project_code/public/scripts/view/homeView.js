@@ -101,7 +101,7 @@ define([
             $(self.ui.kaleidoscope_gradient).show();
             self.showElement(self.ui.kaleidoscope);
             self.trigger("home:rotateImage");
-          }, 500);
+          }, 100);
         });
       },
 
