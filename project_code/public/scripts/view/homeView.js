@@ -113,7 +113,6 @@ define([
           var image = self.$el.find('img');
           image.removeClass();
           image.addClass('rot-' + self.rotationIndex);
-        //  $(image).velocity({rotateZ: self.rotationIndex+"deg"}, {duration: 0, delay: false});
           self.convertVisibleImageToCanvas();
           self.rotationIndex = self.rotationIndex + 1;
           if (self.rotationIndex > 360) {
@@ -190,65 +189,6 @@ define([
         $('.img-canvas').append(canvas);
         $('.final-image').append("<canvas width='250' height='250'></canvas>");
       },
-
-    /*  buildFractals: function() {
-        var rotation = 45;
-
-        var imgSlice = this.$el.find(".img-canvas canvas")[0];
-        for (var i=0; i<this.totalSlices-1; i++) {
-          $('.img-canvas').append('<canvas width="250" height="250"></canvas>');
-          var canvas = $('.img-canvas canvas')[i+1];
-          var context = canvas.getContext("2d");
-          context.drawImage(imgSlice, 0, 0);
-
-          var transformVal = this.getTransform(i, 250);
-          var rotationAngle = 0;
-
-          if (i % 2 === 0) {
-            rotationAngle = (-1) * (45 * (i+2));
-          }
-          else {
-            rotationAngle = 45 * (i+1);
-          }
-
-          var options = {
-            scaleX: i % 2 === 0 ? -1 : 1,
-            translateX: transformVal.x,
-            translateY: transformVal.y,
-            rotateZ: rotationAngle + "deg"
-          };
-
-          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $(canvas).velocity(options, { duration: 0, delay: false, mobileHA: true});
-          }
-          else {
-            $(canvas).velocity(options, {duration: 0, delay: false});
-          }
-          this.$el.find('.img-canvas').append(canvas);
-        }
-      },
-
-      getTransform: function(i, canvasWidth) {
-        var offset = 5;
-        switch(i) {
-          case 0:
-            return {x: '0px', y:'0px'};
-          case 1:
-            return {x: '0px', y: canvasWidth + 'px'};
-          case 2:
-            return {x: -1*offset + "px", y: (canvasWidth-offset) + "px"};
-          case 3:
-            return {x: (-1*(canvasWidth - offset - 1)) + "px", y: (canvasWidth - offset - 1) + "px"};
-          case 4:
-            return {x: (canvasWidth - (offset*2))  + "px", y: canvasWidth + "px"};
-          case 5:
-            return {x: -1*(canvasWidth - (offset*2))  + "px", y: 0 + "px"};
-          case 6:
-            return {x: (canvasWidth - offset - 1)   + "px", y: offset + "px"};
-
-        }
-
-      }*/
 
       buildFractals: function() {
         var rotation = 45;
