@@ -13,8 +13,7 @@
     "lodash": "2.4.1",
     "marionette": "1.6.2",
     "requirejs": "2.1.10",
-    "underscore": "1.5.2",
-    "velocity": "~0.0.10"
-  },
+    "underscore": "1.5.2"
+    },
   "devDependencies": {}
 }

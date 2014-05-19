@@ -10,7 +10,6 @@ require.config({
     handlebars: './bower_components/handlebars/handlebars',
     underscore: './bower_components/lodash/dist/lodash.compat',
     backbone: './bower_components/backbone-amd/backbone',
-    velocity: './bower_components/velocity/jquery.velocity.min',
 
     /* alias all marionette libs */
     'backbone.marionette': './bower_components/backbone.marionette/lib/core/amd/backbone.marionette',
